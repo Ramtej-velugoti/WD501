@@ -1,6 +1,6 @@
 let toggleTodoCompletedStatus = (todoItem) => {
     todoItem. completed = !todoItem. completed;
-    return todoItem;
+    return todoItem
 }
     let testToggleCompletion = () => {
     let item = {
