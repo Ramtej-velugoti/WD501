@@ -1,0 +1,174 @@
+<html>
+
+<head>
+  <title>Form Validation</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap" rel="stylesheet">
+  <style>
+    * {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+  }
+  body{
+    background-color: #555;
+  }
+  
+  /* Style the form container */
+  .main {
+    width: 100%;
+    max-width: 600px;
+    margin: 0 auto;
+    padding: 40px;
+    background-color: #ffffffc7;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  }
+  .main2{
+    width: 100%;
+    max-width: 700px;
+    margin: 0 auto;
+    padding: 40px;
+    background-color: #ffffffc7;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  }
+  /* Style the form header */
+  .main h1 {
+    margin-bottom: 30px;
+    text-align: center;
+    font-size: 36px;
+    font-weight: bold;
+    color: #333;
+  }
+  
+  /* Style the form fields */
+  .form1 input[type="text"],
+  .form1 input[type="password"],
+  .form1 input[type="date"],
+  .form1 select {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 20px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 16px;
+    color: #555;
+  }
+  .form1 select {
+    appearance: none;
+    -webkit-appearance: none;
+    background: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 30 30"><path d="M15 23.5L5.2 13.7l2.8-2.8 6.9 6.9 6.9-6.9 2.8 2.8z" fill="%23555"/><path d="M15 23.5l9.8-9.8-2.8-2.8-6.9 6.9-6.9-6.9-2.8 2.8z" fill="%23fff"/></svg>') no-repeat;
+    background-size: 15px;
+    background-position: calc(100% - 10px) center;
+  }
+  
+  /* Style the form labels */
+  .form1 label {
+    display: block;
+    margin-bottom: 5px;
+   
+  }
+  label{
+    font-size: large;
+  }  
+.form2{
+    background-color: aliceblue;
+}
+  table {
+    border-collapse: collapse;
+    border: 1px solid #ccc;
+    background-color: #fff;
+    font-family: Arial, sans-serif;
+    font-size: 14px;
+    width: 100%;
+  }
+  
+  th {
+    background-color: #f2f2f2;
+    border: 1px solid #ccc;
+    text-align: left;
+    padding: 8px;
+    color: black;
+    font-weight: bold;
+  }
+  
+  td {
+    border: 1px solid #ccc;
+    padding: 8px;
+  }
+  #sub{
+    width: 100px;
+    font-size: 20px;
+    margin-left: 207px;
+    height: 35px;
+    background-color: #ccc;
+    cursor: pointer;
+    font-weight: bold;
+  }
+  #sub:hover{
+    background-color: white;
+    color: black;
+  }
+  h1{
+    font-family: 'Bebas Neue', cursive;
+    font-size: 30px;
+  }
+  span{
+    font-size: large;
+  }
+ #selection{
+  
+background-color:#ffffff ;
+  color: rgba(0, 0, 0, 0.664);
+ }
+  </style>
+  
+</head>
+
+<body>
+  <div class="main">
+    <h1>Registration Form</h1>
+    <div class="form1">
+      <form name="simple" onsubmit="return submitForm();" method="post">
+        <label for="name">Name</label>
+        <input type="text" id="req1" placeholder="Firstname" required><br><br>
+        <label for="Email">Email</label>
+        <input type="text" id="req3" placeholder="Email address" pattern="[A-Za-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$" title="Enter the email like this example@gmail.com" required><br><br>
+        <label for="pass" id>Password</label>
+        <input type="password" id="req5" placeholder="Password" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}" title="Must contain at least one number and one uppercase and lowercase letter, and at least 8 or more characters" required><br><br>
+        <label for="dob">Date of Birth:</label>
+<input type="date" id="db" name="bday" pattern="\d{4}-\d{2}-\d{2}" required>
+<label for="gender">Gender</label>
+        <select id="selection" required title="select the gender">
+          <option>Gender</option>
+          <option>Male</option>
+          <option>Female</option>
+          <options>Others</options>
+        </select>
+        <input type="checkbox" id="agree" required title="Agree the terms and conditions" >&nbsp;<span>agree to the terms and conditions</span>
+        <br><br>
+        <input type="submit" value="Submit" id="sub">
+      </form>
+    </div>
+</div>
+    <br>
+    <div class="main2">
+        <table id="user-table">
+        <tr>
+          <th>Name</th>
+          <th>Email</th>
+          <th>Password</th>
+          <th>DOB</th>
+          <th>Age</th>
+          <th>Gender</th>
+          <th>agree</th>
+        </tr>
+      </table>
+    </div>
+
+  <script src="index.js"></script>
+</body>
+
+</html>
