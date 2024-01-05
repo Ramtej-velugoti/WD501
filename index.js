@@ -1,5 +1,5 @@
 const http = require("http");
-const fs = require();
+const fs = require("fs");
 
 let homeContent = '';
 let projectContent = '';
@@ -32,20 +32,20 @@ http.createServer((request, response) => {
       response.write(projectContent);
       response.end();
       break;
-      case "/registration":
-        response.write(registrationContent);
+    case "/registration":
+      response.write(registrationContent);
       response.end();
-      break;
+    break;
     default:
       response.write(homeContent);
       response.end();
       break;
   }
 })
-.listen(3000, (err) => {
+.listen(3033, (err) => {
   if (err) {
     console.error("Error starting the server:", err);
   } else {
-    console.log("Server is listening on port 3000");
+    console.log("Server is listening on port http://localhost:3033");
   }
 });
